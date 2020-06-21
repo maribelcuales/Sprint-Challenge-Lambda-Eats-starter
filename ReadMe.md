@@ -22,6 +22,7 @@ Form validation means that if the information that a user types in does not meet
 
 3. In 1-2 sentences, define end to end testing.
 
+End to end testing is writing out a series of tests that will test out all the activities and events that a user might do on the website.   
 
 
 You are expected to be able to answer all these questions. Your responses contribute to your Sprint Challenge grade. Skipping this section **will** prevent you from passing this challenge.
