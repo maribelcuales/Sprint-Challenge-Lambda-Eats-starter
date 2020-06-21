@@ -17,6 +17,9 @@ Edit this document to include your answers after each question. Make sure to lea
 The useRouteMatch hook provides access to the match objecct. It matches the URL just like how <Route> would. 
 
 2. How would you explain form validation to someone who has never programmed before?
+
+Form validation means that if the information that a user types in does not meet a form input's requirements, it will return an error message. Example would be if a password did not meet the required six characters.
+
 3. In 1-2 sentences, define end to end testing.
 
 
