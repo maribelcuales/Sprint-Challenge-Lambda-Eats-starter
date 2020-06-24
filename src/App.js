@@ -1,6 +1,8 @@
 import React from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import Home from "./components/Home";
+import OrderForm from "./components/OrderForm";
+import "./App.css";
 
 const App = () => {
   return (
@@ -15,7 +17,7 @@ const App = () => {
 
       <Switch>
         <Route path="/pizza">
-          {/* <OrderForm /> */}
+          <OrderForm />
         </Route>
         <Route path="/">
           <Home />
