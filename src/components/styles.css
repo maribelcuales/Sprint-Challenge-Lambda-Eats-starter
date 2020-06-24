@@ -1,7 +1,8 @@
 .form-container {
-  display: inline-flex;
-  justify-content: center;
-  margin: auto; 
+  display: inline-block;
   background-color: papayawhip;
+}
 
+.order-details {
+  text-align: left;
 }
