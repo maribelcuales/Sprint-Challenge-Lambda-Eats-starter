@@ -12,6 +12,16 @@ function OrderForm() {
     instructions: ""
   });
 
+  const [buttonDisabled, setButtonDisabled] = useState(true);
+
+  const inputChange = e => {
+    e.persist();
+    const newFormData = {
+      ...formState, [e.target.name]: e.target.value
+    };
+    validateChange(e);
+    setFormState(newFormData);
+  }
   
   return (
     <div className="form-container">
