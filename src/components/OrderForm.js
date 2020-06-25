@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, FormGroup, Label, Input, FormFeedback, FormText } from "reactstrap";
+import { Form, FormGroup, Label, Input, FormFeedback } from "reactstrap";
 import "./styles.css"
 
 function OrderForm() {
@@ -26,17 +26,58 @@ function OrderForm() {
             <FormFeedback>Please enter min 2 characters.</FormFeedback>
           </FormGroup>
           <FormGroup>
-            <div className="pizza-size-label">
-              <Label htmlFor="exampleSelect">Choice of Size</Label>
+            <div className="pizza-form-label">
+              <Label htmlFor="pizza-size">Choice of Size</Label>
               <p>Required</p>
             </div>
-            <Input type="select" name="size" id="size">
+            <Input type="select" name="pizza-size" id="pizza-size">
+              <option>Select</option>
               <option>Solo</option>
               <option>Regular</option>
               <option>Family</option>
               <option>Party</option>
             </Input>
           </FormGroup>
+          <FormGroup>
+            <div className="pizza-form-label">
+              <Label htmlFor="pizza-sauce">Choice of Sauce
+              </Label>
+              <p>Required</p>
+            </div>      
+            <FormGroup check>    
+            <Label htmlFor="original-red" check>
+              <Input 
+                type="radio" 
+                name="original-red" />{' '}
+              Original Red
+            </Label>
+          </FormGroup>
+          <FormGroup check>    
+            <Label htmlFor="garlic-ranch" check>
+              <Input 
+                type="radio" 
+                name="garlic-ranch" />{' '}
+              Garlic Ranch
+            </Label>
+          </FormGroup>
+          <FormGroup check>    
+            <Label htmlFor="bbq-sauce" check>
+              <Input 
+                type="radio" 
+                name="bbq-sauce" />{' '}
+              Barbecue Sauce
+            </Label>
+          </FormGroup>
+          <FormGroup check>    
+            <Label htmlFor="spinach-alfredo" check>
+              <Input 
+                type="radio" 
+                name="spinach-alfredo" />{' '}
+              Spinach Alfredo
+            </Label>
+          </FormGroup>
+        </FormGroup>
+gt
         </div>
       </Form>
     </div>
