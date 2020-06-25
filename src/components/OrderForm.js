@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, FormFeedback, CustomInput } from "reactstrap";
 import "./styles.css"
 
 function OrderForm() {
+  const [formState, setFormState] = useState({
+
+
+  })
+
   return (
     <div className="form-container">
       <Form>
@@ -23,14 +28,21 @@ function OrderForm() {
               id="name"
               invalid 
             />
-            <FormFeedback>Please enter min 2 characters.</FormFeedback>
+            <FormFeedback>
+              Please enter min 2 characters.
+            </FormFeedback>
           </FormGroup>
           <FormGroup>
             <div className="pizza-form-label">
-              <Label htmlFor="pizza-size">Choice of Size</Label>
+              <Label htmlFor="size">
+                Choice of Size
+              </Label>
               <p>Required</p>
             </div>
-            <Input type="select" name="pizza-size" id="pizza-size">
+              <Input 
+                type="select" 
+                name="size" 
+                id="size">
               <option>Select</option>
               <option>Solo</option>
               <option>Regular</option>
@@ -40,7 +52,7 @@ function OrderForm() {
           </FormGroup>
           <FormGroup>
             <div className="pizza-form-label">
-              <Label htmlFor="pizza-sauce">
+              <Label htmlFor="sauce">
                 Choice of Sauce
               </Label>
               <p>Required</p>
@@ -110,7 +122,7 @@ function OrderForm() {
             </Label>
           </FormGroup>
           <FormGroup check>
-            <Label htmlFor="dice-tomatoes" check>
+            <Label htmlFor="diced-tomatoes" check>
               <Input 
                 name="diced-tomatoes"
                 type="checkbox" />{' '}
@@ -151,20 +163,20 @@ function OrderForm() {
         </FormGroup>
         <FormGroup>
           <div className="pizza-form-label">
-            <Label htmlFor="special-instructions">
+            <Label htmlFor="instructions">
               Special Instructions
             </Label>
           </div>
           <Input 
             type="textarea" 
-            name="special-instructions" 
-            id="special-instructions"
+            name="instructions" 
+            id="instructions"
             placeholder="Anything else you'd like to add?" 
           />
         </FormGroup>
         </div>
         <div>
-          
+          <button>Add to Order</button>
         </div>
       </Form>
     </div>
