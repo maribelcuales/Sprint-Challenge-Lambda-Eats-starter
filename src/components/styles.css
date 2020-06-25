@@ -1,13 +1,14 @@
 .form-container {
   display: inline-block;
   background-color: papayawhip;
+  margin: auto;
 }
 
 .order-details {
   text-align: left;
 }
 
-.pizza-size-label {
+.pizza-form-label {
   background-color: lightgray;
   padding-top: 10px;
   padding-bottom: 2px;
@@ -15,7 +16,7 @@
   font-weight: bold;
 }
 
-.pizza-size-label p {
+.pizza-form-label p {
   font-size: 12px;
   line-height: 5px;
   font-weight: normal;
