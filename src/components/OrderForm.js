@@ -4,10 +4,15 @@ import "./styles.css"
 
 function OrderForm() {
   const [formState, setFormState] = useState({
+    name: "",
+    size: "",
+    sauce: "",
+    toppings: "",
+    substitute: "",
+    instructions: ""
+  });
 
-
-  })
-
+  
   return (
     <div className="form-container">
       <Form>
@@ -26,12 +31,15 @@ function OrderForm() {
               type="text" 
               name="name" 
               id="name"
+              value={formState.name}
+              onChange={inputChange}
               invalid 
             />
             <FormFeedback>
               Please enter min 2 characters.
             </FormFeedback>
           </FormGroup>
+
           <FormGroup>
             <div className="pizza-form-label">
               <Label htmlFor="size">
@@ -42,14 +50,17 @@ function OrderForm() {
               <Input 
                 type="select" 
                 name="size" 
-                id="size">
+                id="size"
+                onChange={inputChange}
+              >
               <option>Select</option>
-              <option>Solo</option>
-              <option>Regular</option>
-              <option>Family</option>
-              <option>Party</option>
+              <option value="solo">Solo</option>
+              <option value="regular">Regular</option>
+              <option value="family">Family</option>
+              <option value="party">Party</option>
             </Input>
           </FormGroup>
+
           <FormGroup>
             <div className="pizza-form-label">
               <Label htmlFor="sauce">
@@ -61,119 +72,154 @@ function OrderForm() {
             <Label htmlFor="original-red" check>
               <Input 
                 type="radio" 
-                name="original-red" />{' '}
+                name="original-red"
+                checked={formState.sauce}
+                onChange={inputChange}
+              />{' '}
               Original Red
             </Label>
+            </FormGroup>
+            <FormGroup check>    
+              <Label htmlFor="garlic-ranch" check>
+                <Input 
+                  type="radio" 
+                  name="garlic-ranch"
+                  checked={formState.sauce}
+                  onChange={inputChange}
+                />{' '}
+                Garlic Ranch
+              </Label>
+            </FormGroup>
+            <FormGroup check>    
+              <Label htmlFor="bbq-sauce" check>
+                <Input 
+                  type="radio" 
+                  name="bbq-sauce" 
+                  checked={formState.sauce}
+                  onChange={inputChange}
+                />{' '}
+                Barbecue Sauce
+              </Label>
+            </FormGroup>
+            <FormGroup check>    
+              <Label htmlFor="spinach-alfredo" check>
+                <Input 
+                  type="radio" 
+                  name="spinach-alfredo" 
+                  checked={formState.sauce}
+                  onChange={inputChange}
+                />{' '}
+                Spinach Alfredo
+              </Label>
+            </FormGroup>
           </FormGroup>
-          <FormGroup check>    
-            <Label htmlFor="garlic-ranch" check>
-              <Input 
-                type="radio" 
-                name="garlic-ranch" />{' '}
-              Garlic Ranch
-            </Label>
+
+          <FormGroup> 
+            <div className="pizza-form-label">
+              <Label htmlFor="toppings">
+                Add Toppings
+              </Label>
+              <p>Choose up to 4</p>
+            </div>
+            <FormGroup check>
+              <Label htmlFor="pepperoni" check>
+                <Input 
+                  name="pepperoni"
+                  type="checkbox" 
+                  checked={formState.toppings}
+                  onChange={inputChange}
+                />{' '}
+                Pepperoni
+              </Label>
+            </FormGroup>
+            <FormGroup check>
+              <Label htmlFor="onions" check>
+                <Input 
+                  name="onions"
+                  type="checkbox" 
+                  checked={formState.toppings}
+                  onChange={inputChange}
+                />{' '}
+                Onions
+              </Label>
+            </FormGroup>
+            <FormGroup check>
+              <Label htmlFor="green-pepper" check>
+                <Input 
+                  name="green-pepper"
+                  type="checkbox" 
+                  checked={formState.toppings}
+                  onChange={inputChange}
+                />{' '}
+                Green Pepper
+              </Label>
+            </FormGroup>
+            <FormGroup check>
+              <Label htmlFor="diced-tomatoes" check>
+                <Input 
+                  name="diced-tomatoes"
+                  type="checkbox" 
+                  checked={formState.toppings}
+                  onChange={inputChange}
+                />{' '}
+                Diced Tomatoes
+              </Label>
+            </FormGroup>
+            <FormGroup check>
+              <Label htmlFor="canadian-bacon" check>
+                <Input 
+                  name="canadian-bacon"
+                  type="checkbox" 
+                  checked={formState.toppings}
+                  onChange={inputChange}
+                />{' '}
+                Canadian Bacon
+              </Label>
+            </FormGroup>
+            <FormGroup check>
+              <Label htmlFor="extra-cheese" check>
+                <Input 
+                  name="extra-cheese"
+                  type="checkbox" 
+                  checked={formState.toppings}
+                  onChange={inputChange}
+                />{' '}
+                Extra Cheese
+              </Label>
+            </FormGroup>
           </FormGroup>
-          <FormGroup check>    
-            <Label htmlFor="bbq-sauce" check>
-              <Input 
-                type="radio" 
-                name="bbq-sauce" />{' '}
-              Barbecue Sauce
-            </Label>
+
+          <FormGroup>
+            <div className="pizza-form-label">
+              <Label htmlFor="substitute">
+                Choice of Substitute
+              </Label>
+              <p>Choose up to 1</p>
+            </div>
+            <div>
+              <CustomInput 
+                type="switch" 
+                id="substitute" 
+                name="substitute" 
+                label="Gluten Free Crust (+ $100)" />
+            </div>
           </FormGroup>
-          <FormGroup check>    
-            <Label htmlFor="spinach-alfredo" check>
-              <Input 
-                type="radio" 
-                name="spinach-alfredo" />{' '}
-              Spinach Alfredo
-            </Label>
+          
+          <FormGroup>
+            <div className="pizza-form-label">
+              <Label htmlFor="instructions">
+                Special Instructions
+              </Label>
+            </div>
+            <Input 
+              type="textarea" 
+              name="instructions" 
+              id="instructions"
+              value={formState.instructions}
+              onChange={inputChange}
+              placeholder="Anything else you'd like to add?" 
+            />
           </FormGroup>
-        </FormGroup>
-        <FormGroup> 
-          <div className="pizza-form-label">
-            <Label htmlFor="toppings">
-              Add Toppings
-            </Label>
-            <p>Choose up to 4</p>
-          </div>
-          <FormGroup check>
-            <Label htmlFor="pepperoni" check>
-              <Input 
-                name="pepperoni"
-                type="checkbox" />{' '}
-              Pepperoni
-            </Label>
-          </FormGroup>
-          <FormGroup check>
-            <Label htmlFor="onions" check>
-              <Input 
-                name="onions"
-                type="checkbox" />{' '}
-              Onions
-            </Label>
-          </FormGroup>
-          <FormGroup check>
-            <Label htmlFor="green-pepper" check>
-              <Input 
-                name="green-pepper"
-                type="checkbox" />{' '}
-              Green Pepper
-            </Label>
-          </FormGroup>
-          <FormGroup check>
-            <Label htmlFor="diced-tomatoes" check>
-              <Input 
-                name="diced-tomatoes"
-                type="checkbox" />{' '}
-              Diced Tomatoes
-            </Label>
-          </FormGroup>
-          <FormGroup check>
-            <Label htmlFor="canadian-bacon" check>
-              <Input 
-                name="canadian-bacon"
-                type="checkbox" />{' '}
-              Canadian Bacon
-            </Label>
-          </FormGroup>
-          <FormGroup check>
-            <Label htmlFor="extra-cheese" check>
-              <Input 
-                name="extra-cheese"
-                type="checkbox" />{' '}
-              Extra Cheese
-            </Label>
-          </FormGroup>
-        </FormGroup>
-        <FormGroup>
-          <div className="pizza-form-label">
-            <Label htmlFor="substitute">
-              Choice of Substitute
-            </Label>
-            <p>Choose up to 1</p>
-          </div>
-          <div>
-            <CustomInput 
-              type="switch" 
-              id="substitute" 
-              name="substitute" 
-              label="Gluten Free Crust (+ $100)" />
-          </div>
-        </FormGroup>
-        <FormGroup>
-          <div className="pizza-form-label">
-            <Label htmlFor="instructions">
-              Special Instructions
-            </Label>
-          </div>
-          <Input 
-            type="textarea" 
-            name="instructions" 
-            id="instructions"
-            placeholder="Anything else you'd like to add?" 
-          />
-        </FormGroup>
         </div>
         <div>
           <button>Add to Order</button>
