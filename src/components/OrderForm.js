@@ -25,6 +25,18 @@ function OrderForm() {
             />
             <FormFeedback>Please enter min 2 characters.</FormFeedback>
           </FormGroup>
+          <FormGroup>
+            <div className="pizza-size-label">
+              <Label htmlFor="exampleSelect">Choice of Size</Label>
+              <p>Required</p>
+            </div>
+            <Input type="select" name="size" id="size">
+              <option>Solo</option>
+              <option>Regular</option>
+              <option>Family</option>
+              <option>Party</option>
+            </Input>
+          </FormGroup>
         </div>
       </Form>
     </div>
