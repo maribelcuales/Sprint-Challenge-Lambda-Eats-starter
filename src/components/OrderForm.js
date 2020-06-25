@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, FormGroup, Label, Input, FormFeedback } from "reactstrap";
+import { Form, FormGroup, Label, Input, FormFeedback, CustomInput } from "reactstrap";
 import "./styles.css"
 
 function OrderForm() {
@@ -40,7 +40,8 @@ function OrderForm() {
           </FormGroup>
           <FormGroup>
             <div className="pizza-form-label">
-              <Label htmlFor="pizza-sauce">Choice of Sauce
+              <Label htmlFor="pizza-sauce">
+                Choice of Sauce
               </Label>
               <p>Required</p>
             </div>      
@@ -77,7 +78,93 @@ function OrderForm() {
             </Label>
           </FormGroup>
         </FormGroup>
-gt
+        <FormGroup> 
+          <div className="pizza-form-label">
+            <Label htmlFor="toppings">
+              Add Toppings
+            </Label>
+            <p>Choose up to 4</p>
+          </div>
+          <FormGroup check>
+            <Label htmlFor="pepperoni" check>
+              <Input 
+                name="pepperoni"
+                type="checkbox" />{' '}
+              Pepperoni
+            </Label>
+          </FormGroup>
+          <FormGroup check>
+            <Label htmlFor="onions" check>
+              <Input 
+                name="onions"
+                type="checkbox" />{' '}
+              Onions
+            </Label>
+          </FormGroup>
+          <FormGroup check>
+            <Label htmlFor="green-pepper" check>
+              <Input 
+                name="green-pepper"
+                type="checkbox" />{' '}
+              Green Pepper
+            </Label>
+          </FormGroup>
+          <FormGroup check>
+            <Label htmlFor="dice-tomatoes" check>
+              <Input 
+                name="diced-tomatoes"
+                type="checkbox" />{' '}
+              Diced Tomatoes
+            </Label>
+          </FormGroup>
+          <FormGroup check>
+            <Label htmlFor="canadian-bacon" check>
+              <Input 
+                name="canadian-bacon"
+                type="checkbox" />{' '}
+              Canadian Bacon
+            </Label>
+          </FormGroup>
+          <FormGroup check>
+            <Label htmlFor="extra-cheese" check>
+              <Input 
+                name="extra-cheese"
+                type="checkbox" />{' '}
+              Extra Cheese
+            </Label>
+          </FormGroup>
+        </FormGroup>
+        <FormGroup>
+          <div className="pizza-form-label">
+            <Label htmlFor="substitute">
+              Choice of Substitute
+            </Label>
+            <p>Choose up to 1</p>
+          </div>
+          <div>
+            <CustomInput 
+              type="switch" 
+              id="substitute" 
+              name="substitute" 
+              label="Gluten Free Crust (+ $100)" />
+          </div>
+        </FormGroup>
+        <FormGroup>
+          <div className="pizza-form-label">
+            <Label htmlFor="special-instructions">
+              Special Instructions
+            </Label>
+          </div>
+          <Input 
+            type="textarea" 
+            name="special-instructions" 
+            id="special-instructions"
+            placeholder="Anything else you'd like to add?" 
+          />
+        </FormGroup>
+        </div>
+        <div>
+          
         </div>
       </Form>
     </div>
