@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, FormGroup, Label, Input } from "reactstrap";
+import { Form, FormGroup, Label, Input, FormFeedback, FormText } from "reactstrap";
 import "./styles.css"
 
 function OrderForm() {
@@ -20,8 +20,10 @@ function OrderForm() {
             <Input 
               type="text" 
               name="name" 
-              id="name" 
+              id="name"
+              invalid 
             />
+            <FormFeedback>Please enter min 2 characters.</FormFeedback>
           </FormGroup>
         </div>
       </Form>
