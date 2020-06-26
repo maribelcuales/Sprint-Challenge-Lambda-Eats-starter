@@ -12,14 +12,9 @@ const formSchema = yup.object().shape({
   size: yup 
     .string()
     .required("Please select a size"),
-  originalRed: yup
-    .string(),
-  garlicRanch: yup
-    .string(),
-  bbqSauce: yup
-    .string(),
-  spinachAlfredo: yup
-    .string(),
+  sauce: yup
+    .string()
+    .required("Please select a sauce"),
   toppings: yup
     .string()
     .required("Please select a topping"),
@@ -31,10 +26,7 @@ function OrderForm() {
   const [formState, setFormState] = useState({
     name: "",
     size: "",
-    originalRed: "",
-    garlicRanch: "",
-    bbqSauce: "",
-    spinachAlfredo: "",
+    sauce: "",
     toppings: "",
     substitute: "",
     instructions: ""
@@ -43,10 +35,7 @@ function OrderForm() {
   const [errors, setErrors] = useState({
     name: "",
     size: "",
-    originalRed: "",
-    garlicRanch: "",
-    bbqSauce: "",
-    spinachAlfredo: "",
+    sauce: "",
     toppings: "",
     instructions: ""
   })
@@ -90,10 +79,7 @@ function OrderForm() {
         setFormState({
           name: "",
           size: "",
-          originalRed: "",
-          garlicRanch: "",
-          bbqSauce: "",
-          spinachAlfredo: "",
+          sauce: "",
           toppings: "",
           substitute: "",
           instructions: ""
@@ -108,7 +94,8 @@ function OrderForm() {
   const inputChange = e => {
     e.persist();
     const newFormData = {
-      ...formState, [e.target.name]: e.target.value
+      ...formState, [e.target.name]: 
+        e.target.type === "checkbox" ? e.target.checked : e.target.value
     };
     validateChange(e);
     setFormState(newFormData);
@@ -126,6 +113,8 @@ function OrderForm() {
           />
         <div className="order-details">
           <h3>Build Your Own Pizza</h3>
+          
+          {/* Name Input */}
           <FormGroup>
             <Label htmlFor="name">Name</Label>
             <Input 
@@ -141,6 +130,7 @@ function OrderForm() {
             </FormFeedback>
           </FormGroup>
 
+          {/* Pizza Sizes */}
           <FormGroup>
             <div className="pizza-form-label">
               <Label htmlFor="size">
@@ -162,6 +152,7 @@ function OrderForm() {
             </Input>
           </FormGroup>
 
+          {/* Pizza Sauce Options */}
           <FormGroup>
             <div className="pizza-form-label">
               <Label htmlFor="sauce">
@@ -170,44 +161,44 @@ function OrderForm() {
               <p>Required</p>
             </div>      
             <FormGroup check>    
-            <Label htmlFor="originalRed" check>
+            <Label htmlFor="original-red" check>
               <Input
                 type="radio" 
-                name="originalRed"
-                on={formState.originalRed}
+                name="sauce"
+                value="original-red"                
                 onChange={inputChange}
               />{' '}
               Original Red
             </Label>
             </FormGroup>
             <FormGroup check>    
-              <Label htmlFor="garlicRanch" check>
+              <Label htmlFor="garlic-ranch" check>
                 <Input 
                   type="radio" 
-                  name="garlicRanch"
-                  on={formState.garlicRanch}
+                  name="sauce"
+                  value="garlic-ranch"
                   onChange={inputChange}
                 />{' '}
                 Garlic Ranch
               </Label>
             </FormGroup>
             <FormGroup check>    
-              <Label htmlFor="bbqSauce" check>
+              <Label htmlFor="bbq-Sauce" check>
                 <Input 
                   type="radio" 
-                  name="bbqSauce" 
-                  on={formState.bbqSauce}
+                  name="sauce" 
+                  value="bbq-sauce"
                   onChange={inputChange}
                 />{' '}
                 Barbecue Sauce
               </Label>
             </FormGroup>
             <FormGroup check>    
-              <Label htmlFor="spinachAlfredo" check>
+              <Label htmlFor="spinach-alfredo" check>
                 <Input 
                   type="radio" 
-                  name="spinachAlfredo" 
-                  on={formState.spinachAlfredo}
+                  name="sauce" 
+                  value="spinach-alfredo"
                   onChange={inputChange}
                 />{' '}
                 Spinach Alfredo
