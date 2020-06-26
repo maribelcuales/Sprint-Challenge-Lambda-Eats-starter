@@ -15,9 +15,24 @@ const formSchema = yup.object().shape({
   sauce: yup
     .string()
     .required("Please select a sauce"),
-  toppings: yup
-    .string()
-    .required("Please select a topping"),
+  pepperoni: yup
+    .boolean()
+    .oneOf([true], "Please select a topping"),
+  onions: yup
+    .boolean()
+    .oneOf([true], "Please select a topping"),
+  greenPepper: yup
+    .boolean()
+    .oneOf([true], "Please select a topping"),
+  dicedTomatoes: yup
+    .boolean()
+    .oneOf([true], "Please select a topping"),
+  canadianBacon: yup
+    .boolean()
+    .oneOf([true], "Please select a topping"),
+  extraCheese: yup
+    .boolean()
+    .oneOf([true], "Please select a topping"),
   instructions: yup
     .string()
 })
@@ -27,7 +42,12 @@ function OrderForm() {
     name: "",
     size: "",
     sauce: "",
-    toppings: "",
+    pepperoni: "",
+    onions: "",
+    greenPepper: "",
+    dicedTomatoes: "",
+    canadianBacon: "",
+    extraCheese: "",
     substitute: "",
     instructions: ""
   });
@@ -36,8 +56,8 @@ function OrderForm() {
     name: "",
     size: "",
     sauce: "",
-    toppings: "",
-    instructions: ""
+    // toppings: "",
+    // instructions: ""
   })
 
   const [buttonDisabled, setButtonDisabled] = useState(true);
@@ -80,7 +100,12 @@ function OrderForm() {
           name: "",
           size: "",
           sauce: "",
-          toppings: "",
+          pepperoni: "",
+          onions: "",
+          greenPepper: "",
+          dicedTomatoes: "",
+          canadianBacon: "",
+          extraCheese: "",
           substitute: "",
           instructions: ""
         })
@@ -206,19 +231,20 @@ function OrderForm() {
             </FormGroup>
           </FormGroup>
 
+          {/* Pizza Toppings */}
           <FormGroup> 
             <div className="pizza-form-label">
               <Label htmlFor="toppings">
                 Add Toppings
               </Label>
-              <p>Choose up to 4</p>
+              <p>Choose below:</p>
             </div>
             <FormGroup check>
               <Label htmlFor="pepperoni" check>
                 <Input 
                   name="pepperoni"
                   type="checkbox" 
-                  checked={formState.toppings}
+                  checked={formState.pepperoni}
                   onChange={inputChange}
                 />{' '}
                 Pepperoni
@@ -229,51 +255,51 @@ function OrderForm() {
                 <Input 
                   name="onions"
                   type="checkbox" 
-                  checked={formState.toppings}
+                  checked={formState.onions}
                   onChange={inputChange}
                 />{' '}
                 Onions
               </Label>
             </FormGroup>
             <FormGroup check>
-              <Label htmlFor="green-pepper" check>
+              <Label htmlFor="greenPepper" check>
                 <Input 
-                  name="green-pepper"
+                  name="greenPepper"
                   type="checkbox" 
-                  checked={formState.toppings}
+                  checked={formState.greenPepper}
                   onChange={inputChange}
                 />{' '}
                 Green Pepper
               </Label>
             </FormGroup>
             <FormGroup check>
-              <Label htmlFor="diced-tomatoes" check>
+              <Label htmlFor="dicedTomatoes" check>
                 <Input 
-                  name="diced-tomatoes"
+                  name="dicedTomatoes"
                   type="checkbox" 
-                  checked={formState.toppings}
+                  checked={formState.dicedTomatoes}
                   onChange={inputChange}
                 />{' '}
                 Diced Tomatoes
               </Label>
             </FormGroup>
             <FormGroup check>
-              <Label htmlFor="canadian-bacon" check>
+              <Label htmlFor="canadianBacon" check>
                 <Input 
-                  name="canadian-bacon"
+                  name="canadianBacon"
                   type="checkbox" 
-                  checked={formState.toppings}
+                  checked={formState.canadianBacon}
                   onChange={inputChange}
                 />{' '}
                 Canadian Bacon
               </Label>
             </FormGroup>
             <FormGroup check>
-              <Label htmlFor="extra-cheese" check>
+              <Label htmlFor="extraCheese" check>
                 <Input 
-                  name="extra-cheese"
+                  name="extraCheese"
                   type="checkbox" 
-                  checked={formState.toppings}
+                  checked={formState.extraCheese}
                   onChange={inputChange}
                 />{' '}
                 Extra Cheese
@@ -281,6 +307,7 @@ function OrderForm() {
             </FormGroup>
           </FormGroup>
 
+          {/* Choice of Substitute */}
           <FormGroup>
             <div className="pizza-form-label">
               <Label htmlFor="substitute">
@@ -297,6 +324,7 @@ function OrderForm() {
             </div>
           </FormGroup>
           
+          {/* Instructions */}
           <FormGroup>
             <div className="pizza-form-label">
               <Label htmlFor="instructions">
