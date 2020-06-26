@@ -42,6 +42,8 @@ function OrderForm() {
 
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
+  const [post, setPost] = useState([]);
+
   const inputChange = e => {
     e.persist();
     const newFormData = {
