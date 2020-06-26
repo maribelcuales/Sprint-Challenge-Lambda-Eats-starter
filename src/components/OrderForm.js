@@ -1,6 +1,26 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, FormFeedback, CustomInput } from "reactstrap";
+import * as yup from "yup";
+import axios from "axios";
 import "./styles.css"
+
+const formSchema = yup.object().shape({
+  name: yup
+    .string()
+    .min(2)
+    .required("Min of 2 sharacters"),
+  size: yup 
+    .string()
+    .required("Please select a size"),
+  sauce: yup
+    .string()
+    .required("Please select a sauce"),
+  toppings: yup
+    .string()
+    .required("Please select a topping"),
+  instructions: yup
+    .string()
+})
 
 function OrderForm() {
   const [formState, setFormState] = useState({
