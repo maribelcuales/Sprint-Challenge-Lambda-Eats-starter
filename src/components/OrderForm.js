@@ -32,6 +32,14 @@ function OrderForm() {
     instructions: ""
   });
 
+  const [errors, setErrors] = useState({
+    name: "",
+    size: "",
+    sauce: "",
+    toppings: "",
+    instructions: ""
+  })
+
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
   const inputChange = e => {
