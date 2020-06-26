@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Form, FormGroup, Label, Input, FormFeedback, CustomInput } from "reactstrap";
+import { Form, FormGroup, Label, Input, CustomInput } from "reactstrap";
 import * as yup from "yup";
 import axios from "axios";
 import "./styles.css"
@@ -8,7 +8,7 @@ const formSchema = yup.object().shape({
   name: yup
     .string()
     .min(2)
-    .required("Min of 2 sharacters"),
+    .required("Please enter min 2 characters."),
   size: yup 
     .string()
     .required("Please select a size"),
@@ -150,9 +150,7 @@ function OrderForm() {
               onChange={inputChange}
               // invalid 
             />
-            <FormFeedback>
-              Please enter min 2 characters.
-            </FormFeedback>
+            {errors.name.length > 2 ? <p className="error">{errors.name}</p> : null }
           </FormGroup>
 
           {/* Pizza Sizes */}
