@@ -94,7 +94,7 @@ function OrderForm() {
       .post("https://reqres.in/api/users", formState)
       .then(res => {
         setPost(res.data);
-        console.log("success", post);
+        console.log("Order Successful!", post);
       
         setFormState({
           name: "",
@@ -148,7 +148,6 @@ function OrderForm() {
               id="name"
               value={formState.name}
               onChange={inputChange}
-              // invalid 
             />
             {errors.name.length > 2 ? <p className="error">{errors.name}</p> : null }
           </FormGroup>
@@ -306,7 +305,7 @@ function OrderForm() {
           </FormGroup>
 
           {/* Choice of Substitute */}
-          <FormGroup>
+          {/* <FormGroup>
             <div className="pizza-form-label">
               <Label htmlFor="substitute">
                 Choice of Substitute
@@ -320,7 +319,7 @@ function OrderForm() {
                 name="substitute" 
                 label="Gluten Free Crust (+ $100)" />
             </div>
-          </FormGroup>
+          </FormGroup> */}
           
           {/* Instructions */}
           <FormGroup>
@@ -342,6 +341,7 @@ function OrderForm() {
         <div>
           <button disabled={buttonDisabled}>Add to Order</button>
         </div>
+        <pre>{JSON.stringify(post, null, 2)}</pre>
       </Form>
     </div>
   );
