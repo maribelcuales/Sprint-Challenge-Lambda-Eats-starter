@@ -68,6 +68,29 @@ function OrderForm() {
       });
   };
 
+  const formSubmit = e => {
+    e.preventDefault();
+    axios
+      .post("https://reqres.in/api/users", formState)
+      .then(res => {
+        setPost(res.data);
+        console.log("success", post);
+      
+        setFormState({
+          name: "",
+          size: "",
+          sauce: "",
+          toppings: "",
+          substitute: "",
+          instructions: ""
+        })
+        
+      })
+      .catch(err => {
+        console.log(err.res);
+      });
+  };
+
   const inputChange = e => {
     e.persist();
     const newFormData = {
@@ -97,7 +120,7 @@ function OrderForm() {
               id="name"
               value={formState.name}
               onChange={inputChange}
-              invalid 
+              // invalid 
             />
             <FormFeedback>
               Please enter min 2 characters.
@@ -286,7 +309,7 @@ function OrderForm() {
           </FormGroup>
         </div>
         <div>
-          <button>Add to Order</button>
+          <button disabled={buttonDisabled}>Add to Order</button>
         </div>
       </Form>
     </div>
