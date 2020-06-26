@@ -1,20 +1,16 @@
 import React from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import Home from "./components/Home";
+import Header from "./components/Header";
 import OrderForm from "./components/OrderForm";
 import "./App.css";
 
 const App = () => {
   return (
     <div className="App">
-      <nav>
-        <h1>Lambda Eats</h1>
-        <div>
-          <Link to="/">Home</Link>
-          <Link to="/pizza">Order</Link>
-        </div>
-      </nav>
-
+      <div>
+        <Header />
+      </div>
       <div className="route-container">
         <Switch>
           <Route path="/pizza">
