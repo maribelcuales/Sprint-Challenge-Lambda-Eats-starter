@@ -1,3 +1,26 @@
+.header-container {
+  background-color: lightsalmon;
+  opacity: 80%; 
+}
+ 
+.lambda-eats {
+  padding-left: 40px; 
+  font-size: xx-large;
+  color: orangered;
+}
+
+.nav-container {
+  background-color: lightpink;
+  padding-right: 40px;
+  /* flex-direction: row; */
+  /* text-align: right; */
+}
+
+.nav {
+  flex-direction: row;
+  /* text-align: right; */
+}
+
 .form-container {
   display: inline-block;
   background-color: #ffefd5;

@@ -1,25 +1,32 @@
-import React from "react";
+import React from 'react';
 import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import './styles.css';
 
 function Header() {
   return (
-    <div>
+    <div className="header-container">
       <Navbar color="faded" light>
-        <NavbarBrand href="/" className="mr-auto">
+        <NavbarBrand href="/" className="lambda-eats">
           Lambda Eats
         </NavbarBrand>
-          <Nav className="mr-auto" navbar>
-            <NavItem>
-              <NavLink href="/">
-                Home
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/">
-                Help
-              </NavLink>
-            </NavItem>
+        <div className="nav-container">
+          <Nav className="nav" navbar>
+            <div>
+              <NavItem>
+                <NavLink href="/">
+                  Home
+                </NavLink>
+              </NavItem>
+            </div>
+            <div> 
+              <NavItem>
+                <NavLink href="/">
+                  Help
+                </NavLink>
+              </NavItem>
+            </div>
           </Nav>
+        </div>
       </Navbar>
     </div>
   );
