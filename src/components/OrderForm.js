@@ -12,9 +12,14 @@ const formSchema = yup.object().shape({
   size: yup 
     .string()
     .required("Please select a size"),
-  sauce: yup
-    .string()
-    .required("Please select a sauce"),
+  originalRed: yup
+    .string(),
+  garlicRanch: yup
+    .string(),
+  bbqSauce: yup
+    .string(),
+  spinachAlfredo: yup
+    .string(),
   toppings: yup
     .string()
     .required("Please select a topping"),
@@ -26,7 +31,10 @@ function OrderForm() {
   const [formState, setFormState] = useState({
     name: "",
     size: "",
-    sauce: "",
+    originalRed: "",
+    garlicRanch: "",
+    bbqSauce: "",
+    spinachAlfredo: "",
     toppings: "",
     substitute: "",
     instructions: ""
@@ -35,7 +43,10 @@ function OrderForm() {
   const [errors, setErrors] = useState({
     name: "",
     size: "",
-    sauce: "",
+    originalRed: "",
+    garlicRanch: "",
+    bbqSauce: "",
+    spinachAlfredo: "",
     toppings: "",
     instructions: ""
   })
@@ -79,7 +90,10 @@ function OrderForm() {
         setFormState({
           name: "",
           size: "",
-          sauce: "",
+          originalRed: "",
+          garlicRanch: "",
+          bbqSauce: "",
+          spinachAlfredo: "",
           toppings: "",
           substitute: "",
           instructions: ""
@@ -102,7 +116,7 @@ function OrderForm() {
   
   return (
     <div className="form-container">
-      <Form>
+      <Form onSubmit={formSubmit}>
         <h1>
           Build Your Own Pizza
         </h1>
@@ -156,44 +170,44 @@ function OrderForm() {
               <p>Required</p>
             </div>      
             <FormGroup check>    
-            <Label htmlFor="original-red" check>
-              <Input 
+            <Label htmlFor="originalRed" check>
+              <Input
                 type="radio" 
-                name="original-red"
-                checked={formState.sauce}
+                name="originalRed"
+                on={formState.originalRed}
                 onChange={inputChange}
               />{' '}
               Original Red
             </Label>
             </FormGroup>
             <FormGroup check>    
-              <Label htmlFor="garlic-ranch" check>
+              <Label htmlFor="garlicRanch" check>
                 <Input 
                   type="radio" 
-                  name="garlic-ranch"
-                  checked={formState.sauce}
+                  name="garlicRanch"
+                  on={formState.garlicRanch}
                   onChange={inputChange}
                 />{' '}
                 Garlic Ranch
               </Label>
             </FormGroup>
             <FormGroup check>    
-              <Label htmlFor="bbq-sauce" check>
+              <Label htmlFor="bbqSauce" check>
                 <Input 
                   type="radio" 
-                  name="bbq-sauce" 
-                  checked={formState.sauce}
+                  name="bbqSauce" 
+                  on={formState.bbqSauce}
                   onChange={inputChange}
                 />{' '}
                 Barbecue Sauce
               </Label>
             </FormGroup>
             <FormGroup check>    
-              <Label htmlFor="spinach-alfredo" check>
+              <Label htmlFor="spinachAlfredo" check>
                 <Input 
                   type="radio" 
-                  name="spinach-alfredo" 
-                  checked={formState.sauce}
+                  name="spinachAlfredo" 
+                  on={formState.spinachAlfredo}
                   onChange={inputChange}
                 />{' '}
                 Spinach Alfredo
