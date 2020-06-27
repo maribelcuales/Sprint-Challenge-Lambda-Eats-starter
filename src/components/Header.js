@@ -11,14 +11,14 @@ function Header() {
         </NavbarBrand>
         <div className="nav-container">
           <Nav className="nav" navbar>
-            <div>
+            <div className="home-link">
               <NavItem>
                 <NavLink href="/">
                   Home
                 </NavLink>
               </NavItem>
             </div>
-            <div> 
+            <div className="help-link"> 
               <NavItem>
                 <NavLink href="/">
                   Help

@@ -1,24 +1,42 @@
 .header-container {
-  background-color: lightsalmon;
-  opacity: 80%; 
+  background-color: #f8edeb;
+  padding-top: 30px;
+  padding-bottom: 20px;
 }
  
 .lambda-eats {
-  padding-left: 40px; 
+  margin-left: 40px; 
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
   font-size: xx-large;
-  color: orangered;
+  background-color: #fec89a;
+  
 }
 
 .nav-container {
-  background-color: lightpink;
-  padding-right: 40px;
-  /* flex-direction: row; */
-  /* text-align: right; */
+  /* background-color: lightpink; */
+  /* padding-right: 40px; */
 }
 
 .nav {
   flex-direction: row;
-  /* text-align: right; */
+  margin-right: 40px;
+  margin-top: 10px;
+}
+
+.home-link{
+  background-color: #ffb5a7;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 10px;
+}
+
+.help-link{
+  background-color: #fcd5ce;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 10px;
 }
 
 .form-container {
