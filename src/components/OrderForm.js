@@ -129,10 +129,10 @@ function OrderForm() {
   return (
     <div className="form-container">
       <Form onSubmit={formSubmit}>
-        <h1>
+        <h1 className="form-title">
           Build Your Own Pizza
         </h1>
-        <img 
+        <img className="form-img"
             src="https://github.com/maribelcuales/Sprint-Challenge-Lambda-Eats-starter/blob/master/Assets/pizza2.jpg?raw=true"
             alt="whole-pizza"
           />
