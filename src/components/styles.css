@@ -110,4 +110,12 @@
   color: red;
 }
 
+.submit-button {
+  width: 130px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #fec89a;
+  font-weight: bold;
+}
+
 
