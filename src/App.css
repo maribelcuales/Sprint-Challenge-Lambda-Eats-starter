@@ -2,7 +2,6 @@ html,
 body,
 #root {
   width: 100%;
-  height: 100%;
 }
 
 
@@ -12,6 +11,7 @@ body,
   justify-content: center;
   text-align: center;
   margin: auto; 
+  padding-bottom: 20px;
   background-color: #F8EDEB;
   height: 100%;
   width: 100%;
