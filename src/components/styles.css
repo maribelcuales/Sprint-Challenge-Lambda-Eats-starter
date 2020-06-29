@@ -13,11 +13,6 @@
   
 }
 
-.nav-container {
-  /* background-color: lightpink; */
-  /* padding-right: 40px; */
-}
-
 .nav {
   flex-direction: row;
   margin-top: 10px;
@@ -55,22 +50,26 @@
 .pizza-button {
   position: relative;
   display: inline-block;
-  margin-top: 30px;
-  width: 130px;
-  margin-bottom: 50px; 
+  border-radius: 5px;
+  border: none; 
+  box-sizing: border-box;
+  margin: 0 8px;
+  margin-top: -130px;
+  width: 150px; 
+  vertical-align: middle;
+  text-align: center;
   font-size: 30px;
   font-style: oblique;
   font-weight: bold;
-  text-align: center;
-  border-radius: 2px;
-  background-color: #ff9f1c;
-  color: orangered;
-  box-shadow: 5px #f4a261;
+  background-color: #FFAA5A;
+  color: #fb5607;
+  transition: box-shadow 0.2s;
 }
 
 .form-container {
   display: inline-block;
-  background-color: #ffefd5;
+  background-color: #FFAA5A;
+  /* background-color: #ffefd5; */
   margin: auto;
   padding-top: 30px;
   padding-left: 70px;
@@ -92,7 +91,8 @@
 }
 
 .pizza-form-label {
-  background-color: lightgray;
+  background-color: #F9DEC9;
+  /* background-color: lightgray; */
   padding-top: 10px;
   padding-bottom: 2px;
   padding-left: 10px;
