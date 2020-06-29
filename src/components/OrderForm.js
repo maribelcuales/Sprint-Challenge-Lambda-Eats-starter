@@ -16,23 +16,17 @@ const formSchema = yup.object().shape({
     .string()
     .required("Please select a sauce"),
   pepperoni: yup
-    .boolean()
-    .oneOf([true], "Please select a topping"),
+    .boolean(),
   onions: yup
-    .boolean()
-    .oneOf([true], "Please select a topping"),
+    .boolean(),
   greenPepper: yup
-    .boolean()
-    .oneOf([true], "Please select a topping"),
+    .boolean(),
   dicedTomatoes: yup
-    .boolean()
-    .oneOf([true], "Please select a topping"),
+    .boolean(),
   canadianBacon: yup
-    .boolean()
-    .oneOf([true], "Please select a topping"),
+    .boolean(),
   extraCheese: yup
-    .boolean()
-    .oneOf([true], "Please select a topping"),
+    .boolean(),
   instructions: yup
     .string()
 })
@@ -42,12 +36,12 @@ function OrderForm() {
     name: "",
     size: "",
     sauce: "",
-    pepperoni: "",
-    onions: "",
-    greenPepper: "",
-    dicedTomatoes: "",
-    canadianBacon: "",
-    extraCheese: "",
+    pepperoni: false,
+    onions: false,
+    greenPepper: false,
+    dicedTomatoes: false,
+    canadianBacon: false,
+    extraCheese: false,
     substitute: "",
     instructions: ""
   });
@@ -100,13 +94,13 @@ function OrderForm() {
           name: "",
           size: "",
           sauce: "",
-          pepperoni: "",
-          onions: "",
-          greenPepper: "",
-          dicedTomatoes: "",
-          canadianBacon: "",
-          extraCheese: "",
-          substitute: "",
+          pepperoni: false,
+          onions: false,
+          greenPepper: false,
+          dicedTomatoes: false,
+          canadianBacon: false,
+          extraCheese: false,
+          substitute: false,
           instructions: ""
         })
         
@@ -125,7 +119,7 @@ function OrderForm() {
     validateChange(e);
     setFormState(newFormData);
   }
-  
+
   return (
     <div className="form-container">
       <Form onSubmit={formSubmit}>
@@ -339,7 +333,7 @@ function OrderForm() {
           </FormGroup>
         </div>
         <div>
-          <button disabled={buttonDisabled}>Add to Order</button>
+          <button className="submit-button" disabled={buttonDisabled}>Add to Order</button>
         </div>
         <pre>{JSON.stringify(post, null, 2)}</pre>
       </Form>
